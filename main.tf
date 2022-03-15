@@ -1,18 +1,18 @@
 terraform {
   backend "gcs" {
-      bucket = "gcp-3f851c77-tf-state"
-      prefix = "terraform-state"
+    bucket = "gcp-3f851c77-tf-state"
+    prefix = "terraform-state"
   }
 }
 
 resource "null_resource" "null" {
-    triggers = {
-        value = "do nothing"
-    }
+  triggers = {
+    value = "do nothing"
+  }
 }
 
 resource "google_compute_network" "vpc_network" {
-    name = "vpc-network"
+  name = "vpc-network"
 }
 
 # resource "google_compute_subnetwork" "network1" {
@@ -43,7 +43,7 @@ resource "google_compute_network" "vpc_network" {
 #     network_interface {
 #         network = google_compute_subnetwork.network1.id
 #     }
-    
+
 # }
 
 # resource "google_compute_instance" "vm2" {

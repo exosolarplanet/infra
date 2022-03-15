@@ -12,6 +12,7 @@ resource "null_resource" "null" {
 }
 
 resource "google_compute_network" "vpc_network" {
+  project = "gcp-3f851c77"
   name = "vpc-network"
 }
 

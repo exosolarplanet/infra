@@ -16,12 +16,12 @@ resource "google_compute_network" "vpc_network" {
   name    = "vpc-network"
 }
 
-# resource "google_compute_subnetwork" "network1" {
-#   name          = "test-subnetwork1"
-#   ip_cidr_range = "10.2.0.0/16"
-#   region        = "europe-west1"
-#   network       = google_compute_network.vpc_network.id
-# }
+resource "google_compute_subnetwork" "network1" {
+  name          = "test-subnetwork1"
+  ip_cidr_range = "10.2.0.0/16"
+  region        = "europe-west1"
+  network       = google_compute_network.vpc_network.id
+}
 
 # resource "google_compute_subnetwork" "network2" {
 #   name          = "test-subnetwork2"

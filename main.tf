@@ -17,6 +17,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_subnetwork" "network1" {
+  project = "gcp-3f851c77"
   name          = "test-subnetwork1"
   ip_cidr_range = "10.2.0.0/16"
   region        = "europe-west1"

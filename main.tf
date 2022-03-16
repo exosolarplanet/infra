@@ -45,7 +45,7 @@ resource "google_compute_instance" "vm1" {
   }
 
   network_interface {
-    network = google_compute_subnetwork.network1.id
+    subnetwork = google_compute_subnetwork.network1
   }
 
 }

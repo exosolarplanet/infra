@@ -52,6 +52,7 @@ resource "google_compute_instance" "vm1" {
 }
 
 resource "google_compute_instance" "vm2" {
+  project      = "gcp-3f851c77"
   name         = "vm2"
   machine_type = "f1-micro"
   zone         = "europe-west2-b"

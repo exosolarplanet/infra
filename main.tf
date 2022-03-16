@@ -51,19 +51,19 @@ resource "google_compute_instance" "vm1" {
 
 }
 
-# resource "google_compute_instance" "vm2" {
-#     name = "vm2"
-#     machine_type = "e2-medium"
-#     zone = "europe-west2-a"
+resource "google_compute_instance" "vm2" {
+  name         = "vm2"
+  machine_type = "f1-micro"
+  zone         = "europe-west2-b"
 
-#     boot_disk {
-#       initialize_params {
-#           image = "debian-cloud/debian-9"
-#       }
-#     }
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
 
-#     network_interface {
-#         network = google_compute_subnetwork.network2.id
-#     }
-# }
+  network_interface {
+    subnetwork = google_compute_subnetwork.network2.id
+  }
+}
 

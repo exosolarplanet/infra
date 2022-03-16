@@ -32,22 +32,22 @@ resource "google_compute_subnetwork" "network2" {
   network       = google_compute_network.vpc_network.id
 }
 
-#  resource "google_compute_instance" "vm1" {
-#     name = "vm1"
-#     machine_type = "e2-medium"
-#     zone = "europe-west1-a"
+resource "google_compute_instance" "vm1" {
+  name         = "vm1"
+  machine_type = "e2-medium"
+  zone         = "europe-west1-a"
 
-#     boot_disk {
-#       initialize_params {
-#           image = "debian-cloud/debian-9"
-#       }
-#     }
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
 
-#     network_interface {
-#         network = google_compute_subnetwork.network1.id
-#     }
+  network_interface {
+    network = google_compute_subnetwork.network1.id
+  }
 
-# }
+}
 
 # resource "google_compute_instance" "vm2" {
 #     name = "vm2"

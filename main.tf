@@ -24,12 +24,13 @@ resource "google_compute_subnetwork" "network1" {
   network       = google_compute_network.vpc_network.id
 }
 
-# resource "google_compute_subnetwork" "network2" {
-#   name          = "test-subnetwork2"
-#   ip_cidr_range = "10.2.0.0/16"
-#   region        = "europe-west2"
-#   network       = google_compute_network.vpc_network.id
-# }
+resource "google_compute_subnetwork" "network2" {
+  project       = "gcp-3f851c77"
+  name          = "test-subnetwork2"
+  ip_cidr_range = "10.2.0.0/16"
+  region        = "europe-west2"
+  network       = google_compute_network.vpc_network.id
+}
 
 #  resource "google_compute_instance" "vm1" {
 #     name = "vm1"

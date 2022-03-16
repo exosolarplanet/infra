@@ -33,6 +33,7 @@ resource "google_compute_subnetwork" "network2" {
 }
 
 resource "google_compute_instance" "vm1" {
+  project       = "gcp-3f851c77"
   name         = "vm1"
   machine_type = "e2-medium"
   zone         = "europe-west1-a"

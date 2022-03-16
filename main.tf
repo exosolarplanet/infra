@@ -35,7 +35,7 @@ resource "google_compute_subnetwork" "network2" {
 resource "google_compute_instance" "vm1" {
   project      = "gcp-3f851c77"
   name         = "vm1"
-  machine_type = "e2-medium"
+  machine_type = "f1-micro"
   zone         = "europe-west1-b"
 
   boot_disk {
@@ -45,7 +45,8 @@ resource "google_compute_instance" "vm1" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.network1
+    subnetwork = google_compute_subnetwork.network1.id
+    #access_config{}
   }
 
 }
